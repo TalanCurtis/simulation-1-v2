@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Bins.css';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Bins extends Component {
     constructor() {
@@ -13,15 +13,17 @@ class Bins extends Component {
         const bins = this.state.bins.map((bin, i) => {
             if (bin.isEmpty) {
                 return (
-                    <div className='EmptyButton'>
+                    <div key={i} className='EmptyButton'>
                         <h2 >+ Add inventory to bin</h2>
                     </div>
                 )
             } else {
                 return (
-                    <div className='Button'>
-                        <h2 >{`Bin ${bin.id}`}</h2>
-                    </div>
+                     <Link className="Link" to={`/bin/${bin.id}`} key={i}>
+                        <div className='Button'>
+                            <h2 >{`Bin ${bin.id}`}</h2>
+                        </div>
+                    </Link>
                 )
             }
         })
