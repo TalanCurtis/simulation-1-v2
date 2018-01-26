@@ -1,0 +1,11 @@
+.Header{
+    background-color: #AB2A19;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Logo{
+    margin: 10px;
+}
